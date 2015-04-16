@@ -17,9 +17,11 @@ public class Calcula2 {
      * @param args the command line arguments
      */
     static int opc;
-    static Modelo contenedor;
-
+  
     public static void main(String[] args) {
+        
+     Modelo contenedor = new Modelo();    
+        
 
         int num1 = Integer.parseInt(JOptionPane.showInputDialog(null, "Primer Numero"));
 
