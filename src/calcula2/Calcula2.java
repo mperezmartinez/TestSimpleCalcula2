@@ -27,6 +27,7 @@ public class Calcula2 {
 
         contenedor.setNum1(num1);
         contenedor.setNum2(num2);
+        
 
         opc = JOptionPane.showOptionDialog(
                 null, "MENU", "ELIJA SU OPERACION", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
@@ -38,38 +39,46 @@ public class Calcula2 {
 
         switch (opc) {
             case 1:
-                contenedor.setOperacion("SUMA");
+                contenedor.setOperacion(1);
                 break;
             case 2:
-                contenedor.setOperacion("RESTA");
+                contenedor.setOperacion(2);
                 break;
             case 3:
-                contenedor.setOperacion("MULTIPLICAR");
+                contenedor.setOperacion(3);
                 break;
             case 4:
-                contenedor.setOperacion("DIVIDIR");
+                contenedor.setOperacion(4);
             default:
                 System.exit(0);
         }
+        
+        
+        
+       Calcula2 cal= new Calcula2();
+        
+        
+         
+        Vista.imprimir(cal.realizaOpracion(num1, num2, opc));
 
     }
 
-    public float realizaOpracion(float num1, float num2, String oper) {
-
-        if ("SUMA".equals(oper)) {
-            float res= num1+num2;
-            return ("Suma = "+res);
-        }
-        if ("RESTA".equals(oper)) {
+    public float realizaOpracion(float num1, float num2, int oper) {
+        float res = 0;
+        if (oper==1) {
+            res = num1 + num2;
 
         }
-        if ("MULTIPLICAR".equals(oper)) {
-
+        if (oper==2) {
+            res = num1 - num2;
         }
-        if ("DIVIDIR".equals(oper)) {
-
+        if (oper==3) {
+            res = num1 * num2;
         }
-        
+        if (oper==4) {
+            res = num1 / num2;
+        }
+        return res;
     }
 
 }
