@@ -16,52 +16,60 @@ public class Calcula2 {
     /**
      * @param args the command line arguments
      */
-    
-     static int opc;
+    static int opc;
+    static Modelo contenedor;
+
     public static void main(String[] args) {
-      
 
-     int num1=Integer.parseInt(  JOptionPane.showInputDialog(null, "Primer Numero"));
-        
-     int num2=Integer.parseInt(  JOptionPane.showInputDialog(null, "Segundo Numero"));
-     
-     
-     
-     
-            
-                opc = JOptionPane.showOptionDialog(
-                        null, "MENU", "ELIJA SU OPERACION", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
-                            "+",
-                            "-",
-                            "x",
-                            "/"},
-                        "Exit") + 1;
+        int num1 = Integer.parseInt(JOptionPane.showInputDialog(null, "Primer Numero"));
 
-                switch (opc) {
-                    case 1:
-                      
-                        break;
-                    case 2:
-                 
-                        break;
-                    case 3:
-                      
-                        break;
-                    case 4:
-                     
-                    default:
-                        System.exit(0);
-                }
+        int num2 = Integer.parseInt(JOptionPane.showInputDialog(null, "Segundo Numero"));
+
+        contenedor.setNum1(num1);
+        contenedor.setNum2(num2);
+
+        opc = JOptionPane.showOptionDialog(
+                null, "MENU", "ELIJA SU OPERACION", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
+                    "+",
+                    "-",
+                    "x",
+                    "/"},
+                "Exit") + 1;
+
+        switch (opc) {
+            case 1:
+                contenedor.setOperacion("SUMA");
+                break;
+            case 2:
+                contenedor.setOperacion("RESTA");
+                break;
+            case 3:
+                contenedor.setOperacion("MULTIPLICAR");
+                break;
+            case 4:
+                contenedor.setOperacion("DIVIDIR");
+            default:
+                System.exit(0);
+        }
 
     }
-    
-    public void realizaOpracion(float num1,float num2 ,String oper){
-        
-        
-        
-        
+
+    public float realizaOpracion(float num1, float num2, String oper) {
+
+        if ("SUMA".equals(oper)) {
+            float res= num1+num2;
+            return ("Suma = "+res);
+        }
+        if ("RESTA".equals(oper)) {
+
+        }
+        if ("MULTIPLICAR".equals(oper)) {
+
+        }
+        if ("DIVIDIR".equals(oper)) {
+
+        }
         
     }
-    
-    
+
 }
