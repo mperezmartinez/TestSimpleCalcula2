@@ -16,8 +16,7 @@ public class Calcula2 {
     /**
      * @param args the command line arguments
      */
-    static int opc;
-  
+    
     public static void main(String[] args) {
         
      Modelo contenedor = new Modelo();    
@@ -31,13 +30,13 @@ public class Calcula2 {
         contenedor.setNum2(num2);
         
 
-        opc = JOptionPane.showOptionDialog(
+      int  opc = JOptionPane.showOptionDialog(
                 null, "MENU", "ELIJA SU OPERACION", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
                     "+",
                     "-",
                     "x",
                     "/"},
-                "Exit") + 1;
+                "Exit")+1;
 
         switch (opc) {
             case 1:
@@ -51,25 +50,21 @@ public class Calcula2 {
                 break;
             case 4:
                 contenedor.setOperacion(4);
+                break;
             default:
                 System.exit(0);
         }
         
-        
-        
-       Calcula2 cal= new Calcula2();
-        
-        
-         
-        Vista.imprimir(cal.realizaOpracion(num1, num2, opc));
+        contenedor.setResultado(Calcula2.realizaOperacion(num1, num2,opc));
+     
+        Vista.imprimir(contenedor);
 
     }
 
-    public float realizaOpracion(float num1, float num2, int oper) {
+    public static float realizaOperacion(float num1, float num2, int oper) {
         float res = 0;
         if (oper==1) {
-            res = num1 + num2;
-
+            res = num1 + num2;   
         }
         if (oper==2) {
             res = num1 - num2;
